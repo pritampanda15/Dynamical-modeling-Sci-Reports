@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Updated-miR-34a-miR-16-miR-449a</title>
+    <meta name="created-at" content="2022-02-17 19:49:11"/>
+    <meta name="generator" content="GINsim"/>
+    <style type="text/css">
+table {border-collapse: collapse;}
+
+.L1{}
+
+.table th, table td{border: 1px solid black}
+</style>
+    <script type="text/javascript">
+<![CDATA[function getElementsByContent(content, tagName) {
+	var elements = new Array();
+	var nodes = document.getElementsByTagName(tagName);
+	for (var i = 0, node; node = nodes[i]; i++) {
+			if (node.innerHTML.indexOf(content) != -1) elements.push(node);
+	}
+	return elements;
+}
+
+function nextSiblingOfType(node, nodeName, validAttributes) {
+	if (validAttributes == null) validAttributes = function (node) {return true;};
+	node = node.nextSibling;
+	while ((node.nodeName != nodeName || (node.nodeName == nodeName && !validAttributes(node))) && node.nextSibling != null)
+		node = node.nextSibling;
+	return node;
+}
+
+function makeStableStatesClickable() {
+	var tables = getElementsByContent('Stable states', 'td');
+	var i;
+	for (i = 0 ; i - tables.length != 0 ; i++) {
+		var td_stableState = tables[i];//the td containing Stable states
+		var tr = tables[i].parentNode;
+		p = document.createElement('p');
+		p.innerHTML = tables[i].innerHTML + ' (';
+		a = document.createElement('a');
+		a.setAttribute('href', 'javascript:toggle(this, "stableState'+i+'")');
+		a.innerHTML = 'View';
+		p.appendChild(a);
+		p.innerHTML += ')';
+		tables[i].replaceChild(p, tables[i].firstChild) ;
+
+		tr = nextSiblingOfType(tr, tr.nodeName, function (node) {
+			node = nextSiblingOfType(node.firstChild, tables[i].nodeName, null);
+			if (node.getAttribute("colspan") != null && node.getAttribute("colspan") > 3) return true;
+			return false;
+		})
+		var td_new = nextSiblingOfType(tr.firstChild, tables[i].nodeName, null);
+		td = document.createElement('td');
+		td.setAttribute('colspan', '5');
+		p = document.createElement('p');
+		p.innerHTML = td_new.innerHTML;
+		p.setAttribute('id', 'stableState'+i);
+		p.style.display = 'none';
+		td.appendChild(p);
+		tr.replaceChild(td, td_new);
+	}
+}
+
+function toggle(a, id) {
+	elm = document.getElementById(id);
+	if (elm.style.display == 'none') {
+		elm.style.display = 'inline';
+		a.innerHTML = 'Hide';
+	} else {
+		elm.style.display = 'none'
+		a.innerHTML = 'View';
+	}
+}
+
+window.onload = makeStableStatesClickable;
+]]>    </script>
+    <style type="text/css">    </style>
+  </head>
+  <body>
+    <h1>Description of the model "Updated-miR-34a-miR-16-miR-449a"</h1>
+    <img src="file.xhtml_FILES/model.png"/>
+    <h2>Annotation</h2>
+    <p></p>
+    <p/>
+    <h2>Nodes</h2>
+    <table class="table">
+      <tr class="">
+        <th>ID</th>
+        <th>Val</th>
+        <th>Logical function</th>
+        <th>Comment</th>
+      </tr>
+      <tr>
+        <th>Transfected_miRNA</th>
+        <td/>
+        <td>no function</td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>miR16</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>ATM &amp; Transfected_miRNA</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>miR34a</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>ATM &amp; Transfected_miRNA</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>miR449a</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(E2F1 | DDR_Activation) &amp; Transfected_miRNA</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>DDR_Activation</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>Transfected_miRNA &amp; !(Wip1 &amp; BMI1 &amp; Cdc25A &amp; PACS1)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>ATM</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>DDR_Activation &amp; !(Wip1 &amp; HVPE6)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>AMPK</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(ATM | DDR_Activation) &amp; !ULK1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>MAPK</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(ATM | DDR_Activation) &amp; !ULK1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Mdm2</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(!Wip1 | p53_A) &amp; !ATM &amp; AKT</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>p53INP1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_K | p53_A</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>p53_A</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!Sirt1 &amp; !p53_K &amp; (ATM | !p53INP1 | (MAPK &amp; AMPK &amp; !Wip1 &amp; !Mdm2 &amp; !HVPE6))</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>p53_K</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!p53_A &amp; (!Sirt1 | !Wip1) &amp; ATM &amp; !Mdm2 &amp; !HVPE6</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Wip1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_A &amp; !miR16</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Myc</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(E2F1 | MAPK) &amp; !RB &amp; !p21 &amp; !miR34a &amp; !miR449a</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>p21</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_A | (!Myc &amp; !Caspase3 &amp; !BMI1 &amp; !AKT)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>CDK46_CycD</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>Cdc25A &amp; !miR16 &amp; !p21 &amp; !miR34a &amp; !miR449a</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>CDK2_CycE</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>Cdc25A &amp; E2F1 &amp; !miR16 &amp; !p21 &amp; !miR34a &amp; !miR449a</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Cdc25A</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!ATM &amp; !miR16 &amp; !miR34a &amp; !miR449a</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>BMI1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!miR16 &amp; (E2F1 | Myc)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>mTORC2</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(!miR16 &amp; !miR34a) | AKT | !(DRAM1 | mTORC1 | Sirt1 | MAPK | AMPK)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>mTORC1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>AKT &amp; !(ULK1 &amp; DRAM1 &amp; miR16 &amp; MAPK &amp; AMPK)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>BCL2</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!PUMA &amp; !DRAM1 &amp; !MAPK &amp; !(miR449a | miR34a | miR16)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Sirt1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>E2F1 &amp; !miR34a &amp; !miR449a</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>PTEN</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_K &amp; !BMI1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>RB</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(!CDK46_CycD &amp; !CDK2_CycE) | !HVPE6</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>AKT</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!(DDR_Activation | PTEN) | mTORC2 | BMI1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>E2F1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(!RB &amp; ((Cdc25A &amp; ATM) | !Sirt1 | !miR34a | !miR449a)) | Myc</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>HIV1_Nef</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!(miR16 | Transfected_miRNA | DDR_Activation)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>PACS1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!(miR34a | miR449a | DDR_Activation) &amp; HIV1_Nef</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>HVPE6</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!DDR_Activation</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>PUMA</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_K</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>BAX</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>!BCL2 &amp; DRAM1 &amp; !Wip1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Caspase3</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>BAX | (!p21 &amp; !BCL2)</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>DRAM1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p53_K</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>ULK1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(DRAM1 | MAPK | AMPK) &amp; !mTORC2 &amp; !mTORC1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>Beclin1</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>ATM &amp; !BCL2 &amp; ULK1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>PROLIFERATION</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>E2F1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>AUTOPHAGY</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>ULK1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>APOPTOSIS</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>(Caspase3 | DRAM1) &amp; !ULK1</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <th>SENESCENCE</th>
+        <td>1</td>
+        <td>
+          <ul class="L1">
+            <li>p21 | p53_A</li>
+          </ul>
+        </td>
+        <td>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
